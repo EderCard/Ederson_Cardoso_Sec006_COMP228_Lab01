@@ -53,8 +53,7 @@ public class BasePlusCommissionEmployee {
 	}
 
 	// Overloaded constructor without baseSalary
-	public BasePlusCommissionEmployee(int employeeId, String firstName, String lastName, double grossSales,
-			double commissionRate) {
+	public BasePlusCommissionEmployee(int employeeId, String firstName, String lastName, double baseSalary) {
 
 		// Validate negative value
 		if (employeeId < 0) {
@@ -81,15 +80,6 @@ public class BasePlusCommissionEmployee {
 
 		// Set default value for salary when 0 or not informed
 		this.baseSalary = baseSalary == 0 ? 200 : baseSalary;
-
-		// Validate negative or zero value for grossSales
-		if (grossSales <= 0) {
-			throw new IllegalArgumentException("Gross Sales must be a positive value");
-		}
-		this.grossSales = grossSales;
-
-		// Set default value for commission rate when not informed
-		this.commissionRate = commissionRate == 0 ? .1 : commissionRate;
 
 	}
 

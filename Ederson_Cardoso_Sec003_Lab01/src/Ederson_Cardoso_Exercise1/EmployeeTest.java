@@ -3,20 +3,28 @@ package Ederson_Cardoso_Exercise1;
 public class EmployeeTest {
 
 	public static void main(String[] args) {
-		
-		/*
-		CommissionEmployee emp1 = new CommissionEmployee(1, "Ederson", "Cardoso", 1500.0, .5);
+
+		// Default constructor with all arguments
+		CommissionEmployee emp1 = new CommissionEmployee(1, "Ederson", "Cardoso", 1500.0, 0.5);
 		System.out.println(emp1.toString());
-		
-		CommissionEmployee emp2 = new CommissionEmployee(2, "John", "Doe", 2500.0);
+
+		// Overloaded constructor that returns default value (0.1) for commissionRate
+		CommissionEmployee emp2 = new CommissionEmployee(2, "John", "Doe");
 		System.out.println(emp2.toString());
-		
-		CommissionEmployee emp3 = new CommissionEmployee(3, "Rose", "Smith", -1000.0, .2);
+
+		System.out.println();
+		// *************************************************************************************
+		// Default constructor with all arguments
+		BasePlusCommissionEmployee emp3 = new BasePlusCommissionEmployee(3, "Rose", "Smith", 500.00, 1000.0, 0.5);
 		System.out.println(emp3.toString());
-		*/
-		
-		BasePlusCommissionEmployee emp4 = new BasePlusCommissionEmployee(4, "Rose", "Smith",  1000.0, .5);
+
+		// Overloaded constructor
+		BasePlusCommissionEmployee emp4 = new BasePlusCommissionEmployee(4, "Rose", "Smith", 0);
 		System.out.println(emp4.toString());
+
+		System.out.println();
+		// *************************************************************************************
+		
 	}
 
 }

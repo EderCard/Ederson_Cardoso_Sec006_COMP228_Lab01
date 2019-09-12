@@ -43,8 +43,8 @@ public class CommissionEmployee {
 
 	}
 
-	// Overloaded constructor without commissionRate
-	public CommissionEmployee(int employeeId, String firstName, String lastName, double grossSales) {
+	// Overloaded constructor without grossSales and commissionRate
+	public CommissionEmployee(int employeeId, String firstName, String lastName) {
 
 		// Validate negative value
 		if (employeeId < 0) {
@@ -64,15 +64,9 @@ public class CommissionEmployee {
 		}
 		this.lastName = lastName;
 
-		// Validate negative or zero value for grossSales
-		if (grossSales <= 0) {
-			throw new IllegalArgumentException("Gross Sales must be a positive value");
-		}
-		this.grossSales = grossSales;
-
-		// Set default value for commission rate when not informed
-		this.commissionRate = commissionRate == 0 ? .1 : commissionRate;
-
+		// Set default value for commissionRate
+		this.commissionRate = commissionRate == 0 ? 0.1 : commissionRate;
+		
 	}
 
 	// This method calculate earnings
