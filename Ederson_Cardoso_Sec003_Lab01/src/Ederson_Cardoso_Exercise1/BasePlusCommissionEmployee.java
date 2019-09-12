@@ -52,7 +52,7 @@ public class BasePlusCommissionEmployee {
 
 	}
 
-	// Overloaded constructor without baseSalary
+	// Overloaded constructor
 	public BasePlusCommissionEmployee(int employeeId, String firstName, String lastName, double baseSalary) {
 
 		// Validate negative value
@@ -78,7 +78,7 @@ public class BasePlusCommissionEmployee {
 			throw new IllegalArgumentException("Salary must be a positive value");
 		}
 
-		// Set default value for salary when 0 or not informed
+		// Set default value (200) for salary
 		this.baseSalary = baseSalary == 0 ? 200 : baseSalary;
 
 	}

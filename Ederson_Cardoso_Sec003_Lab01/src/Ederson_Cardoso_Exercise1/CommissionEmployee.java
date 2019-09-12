@@ -64,7 +64,7 @@ public class CommissionEmployee {
 		}
 		this.lastName = lastName;
 
-		// Set default value for commissionRate
+		// Set default value (0.1) for commissionRate
 		this.commissionRate = commissionRate == 0 ? 0.1 : commissionRate;
 		
 	}

@@ -24,7 +24,11 @@ public class EmployeeTest {
 
 		System.out.println();
 		// *************************************************************************************
-		
+		HourlyEmployee emp5 = new HourlyEmployee(5, "Will", "Smith", 40.0, 15.0);
+		System.out.println(emp5.toString());
+
+		HourlyEmployee emp6 = new HourlyEmployee(5, "Will", "Smith");
+		System.out.println(emp6.toString());
 	}
 
 }
