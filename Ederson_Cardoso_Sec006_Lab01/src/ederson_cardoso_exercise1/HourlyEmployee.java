@@ -1,11 +1,11 @@
-package Ederson_Cardoso_Exercise1;
+package ederson_cardoso_exercise1;
 
 public class HourlyEmployee {
 	private int employeeId;
 	private String firstName;
 	private String lastName;
 	private double hoursPerWeek;
-	private double hourRate;
+	private double hourRate = 14; // Set default value
 
 	// Constructor with all parameters
 	public HourlyEmployee(int employeeId, String firstName, String lastName, double hoursPerWeek, double hourRate) {
@@ -13,25 +13,27 @@ public class HourlyEmployee {
 		// Validate negative value
 		if (employeeId < 0) {
 			throw new IllegalArgumentException("EmployeeId cannot be negative");
+		} else {
+			this.employeeId = employeeId;
 		}
-		this.employeeId = employeeId;
 
 		// Validate null value for firstName
-		if (firstName == null) {
+		if (firstName == null || firstName.isEmpty()) {
 			throw new IllegalArgumentException("First name cannot be null");
+		} else {
+			this.firstName = firstName;
 		}
-		this.firstName = firstName;
 
 		// Validate null value for lastName
-		if (lastName == null) {
+		if (lastName == null || lastName.isEmpty()) {
 			throw new IllegalArgumentException("Last name cannot be null");
+		} else {
+			this.lastName = lastName;
 		}
-		this.lastName = lastName;
 
-		this.hoursPerWeek = hoursPerWeek;
+		setHoursPerWeek(hoursPerWeek);
 
-		// Set default value (14) for hourRate
-		this.hourRate = hourRate == 0 ? 14 : hourRate;
+		setHourRate(hourRate);
 	}
 
 	// Overloaded constructor
@@ -55,8 +57,6 @@ public class HourlyEmployee {
 		}
 		this.lastName = lastName;
 
-		// Set default value (14) for hourRate
-		this.hourRate = hourRate == 0 ? 14 : hourRate;
 	}
 
 	// This method calculate earnings
@@ -90,7 +90,12 @@ public class HourlyEmployee {
 	}
 
 	public void setHoursPerWeek(double hoursPerWeek) {
-		this.hoursPerWeek = hoursPerWeek;
+		// Validate negative value
+		if (hoursPerWeek < 0) {
+			throw new IllegalArgumentException("Hours per week cannot be negative");
+		} else {
+			this.hoursPerWeek = hoursPerWeek;
+		}
 	}
 
 	public double getHourRate() {
@@ -98,7 +103,12 @@ public class HourlyEmployee {
 	}
 
 	public void setHourRate(double hourRate) {
-		this.hourRate = hourRate;
+		// Validate minimum value (14)
+		if (hourRate < 14) {
+			throw new IllegalArgumentException("Hour rate must be at least $14.00 per hour");
+		} else {
+			this.hourRate = hourRate;
+		}
 	}
 
 }
